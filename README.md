@@ -45,8 +45,49 @@ The executables read the input from Standard Input (stdin) and write the solutio
 
 ## Input/Output format
 **Input Format**
-* 
+1. Three integers: $C$ (Total cars), $M$ (Upgrades), $K$ (Classe.
+2. $M$ interes: calues of $c_e$ for each upgrade.
+3. $M$ integers: values of $n_e$ for each upgrade.
+4. $K$ lines describing classes: each line contains:
+  * Class ID ($0$ to $K-1$).
+  * Number of cars to produce for this class.
+  * $M$ booleans ($0$ or $1$) indicating if the class needs the $i$-th upgrade.
 
+**Output format**
+1. First line: two numbers
+  * Integer: total penalty of the solution.
+  * Double: time elapsed (seconds) to find this solution.
+2. Second line: a sequence of $C$ integers representing the production order (Class ID)
+
+*Example*:
+Input: 
+```
+10 5 3
+1 1 1 2 1
+2 2 2 3 2
+0 4 1 1 0 0 1
+1 3 0 1 0 1 0
+2 3 0 0 1 0 0
+```
+
+Output:
+```
+3 2.3
+0 1 0 1 2 0 2 0 2 1
+```
+
+## Testing 
+A `checker` tool is provided to calidate the correctess of the solutions.
+
+### Compile checker
+```bash
+g++ checker.cc -o checker
+```
+
+### Run checker
+```bash
+./checker input.txt output.txt
+```
 
 
 
